@@ -1,4 +1,5 @@
 #include "../std_lib_facilities.h"
+#include<vector>
 
 
 string gramatyka_groszowa(int liczba)
@@ -30,55 +31,68 @@ string gramatyka_groszowa(int liczba)
     return koncowka_nazwy;
 }
 
+int ile_masz_monet(string nominal_monety)
+{
+    int liczba_monet = 0;
+    cout <<"Ile masz " << nominal_monety + "ek" << endl;
+    cin >> liczba_monet;
+    cout <<"Masz " << liczba_monet << " " << nominal_monety + gramatyka_groszowa(liczba_monet) << endl;
+
+
+    if(nominal_monety == "jednogroszów")
+    {
+        liczba_monet = liczba_monet;
+    }
+    else if(nominal_monety == "dwugroszów")
+    {
+        liczba_monet *= 2;
+    }
+    else if(nominal_monety == "pieciogroszow")
+    {
+        liczba_monet *= 5;
+    }
+    else if(nominal_monety == "dziesieciogroszów")
+    {
+        liczba_monet *= 10;
+    }
+    else if(nominal_monety == "dwudziestogroszów")
+    {
+        liczba_monet *= 20;
+    }
+    else if(nominal_monety == "piedziesiaciogwoszów")
+    {
+        liczba_monet *= 50;
+    }
+    else if (nominal_monety == "z³otówek")
+    {
+        liczba_monet *= 100;
+    }
+    else
+    {
+        error("Nieznany nomina³ monet");
+    }
+
+    return liczba_monet;
+}
+
 
 int main()
 {
     system("chcp 1250");
-    int jedogoszowki, dwugoszowki, pieciogowszowki,
-    dziesieciogroszowki, dwudziestogroszowki,
-    piedziesiaciogwoszowki, zlotowki;
+    int suma_groszy = 0;
 
-    /*
-    while(cin >> jedogoszowki)
+
+    string nominaly[] = {"jednogroszów", "dwugroszów", "pieciogroszow", "dziesieciogroszów", "dwudziestogroszów", "piedziesiaciogwoszów", "z³otówek" };
+    vector<string> nominaly_monet(nominaly, nominaly + sizeof(nominaly)/ sizeof(nominaly[0]));
+
+    for(unsigned int i = 0; i < nominaly_monet.size(); ++i)
     {
-       cout <<"Masz " << jedogoszowki << " jednogroszow" + gramatyka_groszowa(jedogoszowki) << endl;
+        suma_groszy += ile_masz_monet(nominaly_monet[i]);
     }
-*/
-
-    cout <<"Ile masz jednogroszówek?" << endl;
-    cin >> jedogoszowki;
-    cout <<"Masz " << jedogoszowki << " jednogroszow" + gramatyka_groszowa(jedogoszowki) << endl;
-
-    cout <<"Ile masz dwugoszowkek?" << endl;
-     cin >> dwugoszowki;
-     cout <<"Masz " << dwugoszowki << " dwugroszow" + gramatyka_groszowa(dwugoszowki) << endl;
-
-    cout <<"Ile masz dziesieciogroszowek?" << endl;
-    cin >> pieciogowszowki;
-    cout <<"Masz " << pieciogowszowki<< " pieciogowszow" + gramatyka_groszowa(pieciogowszowki) << endl;
-
-    cout <<"Ile masz dwudziestogroszowek?" << endl;
-    cin >> dziesieciogroszowki;
-    cout <<"Masz " << dziesieciogroszowki << " dziesieciogroszow" + gramatyka_groszowa(dziesieciogroszowki) << endl;
-
-     cout <<"Ile masz dwudziestogroszowek?" << endl;
-    cin >> dwudziestogroszowki;
-    cout <<"Masz " << dwudziestogroszowki << " dwudziestogroszow" + gramatyka_groszowa(dwudziestogroszowki) << endl;
-
-    cout <<"Ile masz piedziesiaciogwoszowek?" << endl;
-    cin >>  piedziesiaciogwoszowki;
-    cout <<"Masz " << piedziesiaciogwoszowki << " piedziesiaciogwoszow" + gramatyka_groszowa(piedziesiaciogwoszowki) << endl;
-
-    cout <<"Ile masz z³otówek?" << endl;
-    cin >> zlotowki;
-    cout <<"Masz " << zlotowki << " z³otów" + gramatyka_groszowa(zlotowki) << endl;
-
-    int suma_groszy = jedogoszowki + dwugoszowki + dziesieciogroszowki + dwudziestogroszowki + piedziesiaciogwoszowki + (zlotowki*100);
 
     cout <<"Wartoœc wszystkich twoich monet: " << suma_groszy << " groszy" << endl;
     double suma_wszystkich_monet_zlote = suma_groszy/100.0;
     cout <<"Czyli: " << suma_wszystkich_monet_zlote << " z³otego" << endl;
-
 
 
     return 0;

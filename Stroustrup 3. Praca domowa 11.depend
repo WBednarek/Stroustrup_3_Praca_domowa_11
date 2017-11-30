@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1512066614 source:d:\programowanie stroustrup\stroustrup 3. praca domowa 11\main.cpp
+1512069297 source:d:\programowanie stroustrup\stroustrup 3. praca domowa 11\main.cpp
 	"../std_lib_facilities.h"
+	<vector>
 
 1512049280 d:\programowanie stroustrup\std_lib_facilities.h
 	<iostream>
