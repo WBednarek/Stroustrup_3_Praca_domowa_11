@@ -1,7 +1,6 @@
 #include "../std_lib_facilities.h"
 #include<vector>
 
-
 string gramatyka_groszowa(int liczba)
 {
     string koncowka_nazwy = " ";
