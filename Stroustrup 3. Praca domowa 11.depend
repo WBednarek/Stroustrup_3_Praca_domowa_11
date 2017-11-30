@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1512062821 source:d:\programowanie stroustrup\stroustrup 3. praca domowa 11\main.cpp
+	"../std_lib_facilities.h"
+
+1512049280 d:\programowanie stroustrup\std_lib_facilities.h
+	<iostream>
+	<fstream>
+	<sstream>
+	<cmath>
+	<cstdlib>
+	<string>
+	<list>
+	<vector>
+	<algorithm>
+	<stdexcept>
+	<hash_map>
+	<ext/hash_map>
+	<iomanip>
+
