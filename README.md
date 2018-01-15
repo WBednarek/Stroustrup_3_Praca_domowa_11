@@ -4,3 +4,6 @@ Remeber to set #include "../std_lib_facilities.h".
 If you don;t have this file you can find it on :
 http://www.stroustrup.com/Programming/std_lib_facilities.h
 Usung this file use C++98 not 11!
+
+C++11 version of std_lib_facilities.h available on:
+http://stroustrup.com/Programming/PPP2code/std_lib_facilities.h
